@@ -21,7 +21,7 @@ import SkillCards from "./Components/Skills";
 import CountUp from "react-countup";
 function App() {
   const [count, setCount] = useState(0);
-  const fileUrl = "../public/kranthiResume.pdf";
+  const fileUrl = "/kranthiResume.pdf";
   const [formState, setFormState] = useState({
     name: "",
     email: "",
@@ -71,7 +71,7 @@ function App() {
                 <button
                   type='button'
                   onClick={toggleMenu}
-                  className='inline-flex p-1 text-black transition-all duration-200 border border-black lg:hidden focus:bg-gray-100 hover:bg-gray-100'
+                  className='inline-flex p-1 text-black transition-all duration-200 border border-white bg-white lg:hidden focus:bg-gray-100 hover:bg-gray-100'
                 >
                   {/* Menu Icon */}
                   <svg
@@ -150,30 +150,35 @@ function App() {
             >
               <div className='flex flex-col items-start p-4 space-y-4'>
                 <a
+                  onClick={() => setIsMenuOpen(false)}
                   href='#home'
                   className='block text-base font-semibold text-black transition-all duration-200 hover:text-opacity-80'
                 >
                   Home
                 </a>
                 <a
+                  onClick={() => setIsMenuOpen(false)}
                   href='#about'
                   className='block text-base font-semibold text-black transition-all duration-200 hover:text-opacity-80'
                 >
                   About
                 </a>
                 <a
+                  onClick={() => setIsMenuOpen(false)}
                   href='#skills'
                   className='block text-base font-semibold text-black transition-all duration-200 hover:text-opacity-80'
                 >
                   Skills
                 </a>
                 <a
+                  onClick={() => setIsMenuOpen(false)}
                   href='#projects'
                   className='block text-base font-semibold text-black transition-all duration-200 hover:text-opacity-80'
                 >
                   Projects
                 </a>
                 <a
+                  onClick={() => setIsMenuOpen(false)}
                   href='#contact'
                   className='block text-base font-semibold text-black transition-all duration-200 hover:text-opacity-80'
                 >
@@ -268,7 +273,7 @@ function App() {
 
                   <div class='mt-10 sm:flex sm:items-center sm:space-x-8'>
                     <a
-                      href='#'
+                      href='#about'
                       title=''
                       class='inline-flex items-center justify-center px-10 py-4 text-base font-semibold text-white transition-all duration-200 bg-orange-500 hover:bg-orange-600 focus:bg-orange-600 animate-fade-right'
                       role='button'
