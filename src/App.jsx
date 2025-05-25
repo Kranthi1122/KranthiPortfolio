@@ -16,7 +16,7 @@ import pharmaImage from "./assets/pharma.jpg";
 import thunderImage from "./assets/thunder.jpg";
 import vueImage from "./assets/VUE.png";
 import "./App.css";
-import image from "./assets/kranthiProfilePic.jpg";
+import image from "./assets/kranthiProfilePicc.webp";
 import SkillCards from "./Components/Skills";
 import CountUp from "react-countup";
 function App() {
@@ -244,7 +244,7 @@ function App() {
                     <span className='bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent'>
                       K
                     </span>
-                    ranthi MERN Stack
+                    ranthi Full Stack
                     <div class='relative inline-flex'>
                       <span class='absolute inset-x-0 bottom-0 border-b-[30px] border-[#4ADE80]'></span>
                       <h1 class='relative text-4xl font-bold text-black sm:text-6xl lg:text-7xl'>
@@ -265,10 +265,15 @@ function App() {
                     dynamic organization
                   </p> */}
                   <p class='mt-8 text-base text-black sm:text-xl animate-fade-right'>
-                    Passionate MERN Stack Developer with expertise in building
-                    dynamic, scalable web applications using MongoDB, Express,
-                    React, and Node.js. Committed to delivering clean, efficient
-                    code and seamless user experiences.
+                    Versatile Full Stack Developer with a strong foundation in
+                    building dynamic, scalable web applications. Proficient in
+                    React (Redux, Zustand), Angular, and Vue.js for robust
+                    frontend development, combined with backend expertise in
+                    Node.js, Express, Koa.js, and Python. Passionate about
+                    writing clean, efficient code and creating seamless,
+                    high-performance user experiences. Adept at collaborating
+                    across teams and adapting quickly to new technologies in
+                    fast-paced environments.
                   </p>
 
                   <div class='mt-10 sm:flex sm:items-center sm:space-x-8'>
@@ -331,14 +336,16 @@ function App() {
                 Numbers Speak My Experience
               </h2>
               <p class='mt-3 text-xl leading-relaxed text-gray-600 md:mt-8'>
-                With over 1.7 years of experience as a skilled MERN Stack
-                Developer, I have honed my expertise in crafting dynamic,
-                high-performing web applications. I have successfully delivered
-                2+ projects, demonstrating a strong commitment to clean code,
-                scalable architecture, and user-centric design. My passion for
-                innovation drives me to continuously learn and implement the
-                latest technologies, ensuring impactful solutions tailored to
-                client needs."
+                With over 2.5 years of experience as a skilled Full Stack
+                Developer, I have honed my expertise in building dynamic,
+                high-performing web applications using technologies like React
+                (Redux, Zustand), Angular, Vue.js, Node.js, Express, Koa.js, and
+                Python. I have successfully delivered 3+ end-to-end projects,
+                showcasing a strong commitment to clean code, scalable
+                architecture, and user-centric design. My passion for innovation
+                and continuous learning drives me to stay up-to-date with the
+                latest technologies, ensuring impactful and efficient solutions
+                tailored to client needs.
               </p>
             </div>
 
@@ -349,7 +356,7 @@ function App() {
                     {" "}
                     <CountUp
                       start={0}
-                      end={1.7}
+                      end={2.5}
                       decimals={1}
                       duration={7}
                       suffix='+'
@@ -368,7 +375,7 @@ function App() {
                 <h3 class='font-bold text-7xl'>
                   <span class='text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-600 to-blue-600'>
                     {" "}
-                    <CountUp start={0} end={2} duration={7} suffix='+' />{" "}
+                    <CountUp start={0} end={3} duration={7} suffix='+' />{" "}
                   </span>
                 </h3>
                 <p class='mt-4 text-xl font-medium text-gray-900'>
@@ -1036,7 +1043,7 @@ function App() {
           <div class='px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl'>
             <div class='text-center sm:flex sm:items-center sm:justify-center sm:text-left'>
               <h2 class='text-xl font-bold text-white'>
-                © 2024 Kranthi Kumar Pusala. All rights reserved.
+                © 2025 Kranthi Kumar Pusala. All rights reserved.
               </h2>
             </div>
           </div>
