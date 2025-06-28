@@ -16,7 +16,7 @@ import pharmaImage from "./assets/pharma.jpg";
 import thunderImage from "./assets/thunder.jpg";
 import vueImage from "./assets/VUE.png";
 import "./App.css";
-import image from "./assets/kranthiProfilePicc.JPG";
+import image from "./assets/kranthiProfilePicc.jpg";
 import SkillCards from "./Components/Skills";
 import CountUp from "react-countup";
 function App() {
