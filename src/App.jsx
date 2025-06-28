@@ -16,7 +16,7 @@ import pharmaImage from "./assets/pharma.jpg";
 import thunderImage from "./assets/thunder.jpg";
 import vueImage from "./assets/VUE.png";
 import "./App.css";
-import image from "./assets/kranthiProfilePicc.webp";
+import image from "./assets/kranthiProfilePicc.JPG";
 import SkillCards from "./Components/Skills";
 import CountUp from "react-countup";
 function App() {
@@ -339,7 +339,7 @@ function App() {
 
                 <div className='animate-fade-left animate-delay-300'>
                   <img
-                    class='w-full rounded-3xl animate-scale-in animate-delay-500 hover:scale-105 hover:shadow-2xl transition-all duration-500 hover-glow'
+                    class='w-full rounded-3xl animate-scale-in animate-delay-500 scale-105 shadow-2xl transition-all duration-500 hover-glow'
                     src={image}
                     alt='Kranthi Kumar Profile'
                   />
