@@ -16,12 +16,12 @@ import pharmaImage from "./assets/pharma.jpg";
 import thunderImage from "./assets/thunder.jpg";
 import vueImage from "./assets/VUE.png";
 import "./App.css";
-import image from "./assets/kranthiProfilePic.jpg";
+import image from "./assets/kranthiProfilePicc.jpg";
 import SkillCards from "./Components/Skills";
 import CountUp from "react-countup";
 function App() {
   const [count, setCount] = useState(0);
-  const fileUrl = "../public/kranthiResume.pdf";
+  const fileUrl = "/kranthiResume.pdf";
   const [formState, setFormState] = useState({
     name: "",
     email: "",
@@ -48,21 +48,21 @@ function App() {
   };
   return (
     <>
-      <div className='w-screen h-screen'>
-        <div class='bg-gradient-to-b from-green-50 to-green-100 h-dvh'>
+      <div className='w-screen'>
+        <div class='bg-gradient-to-b from-green-50 to-green-100 min-h-screen'>
           <header className='fixed top-0 w-screen bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 z-50'>
             <div className='px-4 mx-auto sm:px-6 lg:px-8'>
               <div className='flex items-center justify-between h-16 lg:h-20'>
                 {/* Logo Section */}
-                <div className='flex-shrink-0 flex items-center'>
-                  <a href='#' title='' className='flex'>
+                <div className='flex-shrink-0 flex items-center animate-fade-right'>
+                  <a href='#' title='' className='flex hover-glow'>
                     <img
-                      className='w-auto h-10 rounded-full'
+                      className='w-auto h-10 rounded-full transition-all duration-300 hover:scale-110 hover:rotate-12 animate-bounce-in'
                       src={image}
                       alt='Logo'
                     />
                   </a>
-                  <h2 className='text-base text-black font-semibold ml-2 tracking-wider'>
+                  <h2 className='text-base text-black font-semibold ml-2 tracking-wider animate-fade-right animate-delay-200 hover:text-purple-600 transition-colors duration-300'>
                     KRANTHI KUMAR
                   </h2>
                 </div>
@@ -71,7 +71,7 @@ function App() {
                 <button
                   type='button'
                   onClick={toggleMenu}
-                  className='inline-flex p-1 text-black transition-all duration-200 border border-black lg:hidden focus:bg-gray-100 hover:bg-gray-100'
+                  className='inline-flex p-1 text-black transition-all duration-200 border border-white bg-white lg:hidden focus:bg-gray-100 hover:bg-gray-100'
                 >
                   {/* Menu Icon */}
                   <svg
@@ -110,31 +110,31 @@ function App() {
                 <div className='hidden ml-auto lg:flex lg:items-center lg:justify-center lg:space-x-10'>
                   <a
                     href='#home'
-                    className='text-base font-semibold text-black transition-all duration-200 hover:text-opacity-80'
+                    className='text-base font-semibold text-black transition-all duration-300 hover:text-white hover:bg-gradient-to-r hover:from-indigo-500 hover:to-purple-500 hover:scale-110 hover:shadow-lg rounded-lg px-4 py-2 transform hover:-translate-y-1 animate-fade-down animate-delay-100'
                   >
                     Home
                   </a>
                   <a
                     href='#about'
-                    className='text-base font-semibold text-black transition-all duration-200 hover:text-opacity-80'
+                    className='text-base font-semibold text-black transition-all duration-300 hover:text-white hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-500 hover:scale-110 hover:shadow-lg rounded-lg px-4 py-2 transform hover:-translate-y-1 animate-fade-down animate-delay-200'
                   >
                     About
                   </a>
                   <a
                     href='#skills'
-                    className='text-base font-semibold text-black transition-all duration-200 hover:text-opacity-80'
+                    className='text-base font-semibold text-black transition-all duration-300 hover:text-white hover:bg-gradient-to-r hover:from-pink-500 hover:to-red-500 hover:scale-110 hover:shadow-lg rounded-lg px-4 py-2 transform hover:-translate-y-1 animate-fade-down animate-delay-300'
                   >
                     Skills
                   </a>
                   <a
                     href='#projects'
-                    className='text-base font-semibold text-black transition-all duration-200 hover:text-opacity-80'
+                    className='text-base font-semibold text-black transition-all duration-300 hover:text-white hover:bg-gradient-to-r hover:from-green-500 hover:to-blue-500 hover:scale-110 hover:shadow-lg rounded-lg px-4 py-2 transform hover:-translate-y-1 animate-fade-down animate-delay-500'
                   >
                     Projects
                   </a>
                   <a
                     href='#contact'
-                    className='text-base font-semibold text-black transition-all duration-200 hover:text-opacity-80'
+                    className='text-base font-semibold text-black transition-all duration-300 hover:text-white hover:bg-gradient-to-r hover:from-blue-500 hover:to-indigo-500 hover:scale-110 hover:shadow-lg rounded-lg px-4 py-2 transform hover:-translate-y-1 animate-fade-down animate-delay-700'
                   >
                     Contact
                   </a>
@@ -145,39 +145,59 @@ function App() {
             {/* Navigation Menu for Small Screens */}
             <div
               className={`${
-                isMenuOpen ? "block" : "hidden"
-              } lg:hidden bg-white shadow-lg`}
+                isMenuOpen ? "block animate-slide-down" : "hidden"
+              } lg:hidden bg-white shadow-lg overflow-hidden transition-all duration-300 ease-in-out`}
             >
-              <div className='flex flex-col items-start p-4 space-y-4'>
+              <div className='flex flex-col items-start p-4 space-y-2'>
                 <a
+                  onClick={() => setIsMenuOpen(false)}
                   href='#home'
-                  className='block text-base font-semibold text-black transition-all duration-200 hover:text-opacity-80'
+                  className={`block w-full text-base font-semibold text-black transition-all duration-300 hover:text-white hover:bg-gradient-to-r hover:from-indigo-500 hover:to-purple-500 hover:scale-105 hover:shadow-md rounded-lg px-4 py-3 transform hover:-translate-y-1 ${
+                    isMenuOpen ? "animate-fade-in-up" : ""
+                  }`}
+                  style={{ animationDelay: "0.1s" }}
                 >
-                  Home
+                  🏠 Home
                 </a>
                 <a
+                  onClick={() => setIsMenuOpen(false)}
                   href='#about'
-                  className='block text-base font-semibold text-black transition-all duration-200 hover:text-opacity-80'
+                  className={`block w-full text-base font-semibold text-black transition-all duration-300 hover:text-white hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-500 hover:scale-105 hover:shadow-md rounded-lg px-4 py-3 transform hover:-translate-y-1 ${
+                    isMenuOpen ? "animate-fade-in-up" : ""
+                  }`}
+                  style={{ animationDelay: "0.2s" }}
                 >
-                  About
+                  👨‍💻 About
                 </a>
                 <a
+                  onClick={() => setIsMenuOpen(false)}
                   href='#skills'
-                  className='block text-base font-semibold text-black transition-all duration-200 hover:text-opacity-80'
+                  className={`block w-full text-base font-semibold text-black transition-all duration-300 hover:text-white hover:bg-gradient-to-r hover:from-pink-500 hover:to-red-500 hover:scale-105 hover:shadow-md rounded-lg px-4 py-3 transform hover:-translate-y-1 ${
+                    isMenuOpen ? "animate-fade-in-up" : ""
+                  }`}
+                  style={{ animationDelay: "0.3s" }}
                 >
-                  Skills
+                  🚀 Skills
                 </a>
                 <a
+                  onClick={() => setIsMenuOpen(false)}
                   href='#projects'
-                  className='block text-base font-semibold text-black transition-all duration-200 hover:text-opacity-80'
+                  className={`block w-full text-base font-semibold text-black transition-all duration-300 hover:text-white hover:bg-gradient-to-r hover:from-green-500 hover:to-blue-500 hover:scale-105 hover:shadow-md rounded-lg px-4 py-3 transform hover:-translate-y-1 ${
+                    isMenuOpen ? "animate-fade-in-up" : ""
+                  }`}
+                  style={{ animationDelay: "0.4s" }}
                 >
-                  Projects
+                  💼 Projects
                 </a>
                 <a
+                  onClick={() => setIsMenuOpen(false)}
                   href='#contact'
-                  className='block text-base font-semibold text-black transition-all duration-200 hover:text-opacity-80'
+                  className={`block w-full text-base font-semibold text-black transition-all duration-300 hover:text-white hover:bg-gradient-to-r hover:from-blue-500 hover:to-indigo-500 hover:scale-105 hover:shadow-md rounded-lg px-4 py-3 transform hover:-translate-y-1 ${
+                    isMenuOpen ? "animate-fade-in-up" : ""
+                  }`}
+                  style={{ animationDelay: "0.5s" }}
                 >
-                  Contact
+                  📞 Contact
                 </a>
               </div>
             </div>
@@ -185,49 +205,53 @@ function App() {
 
           <section class='py-10 sm:py-16 mt-20 lg:py-24' id='home'>
             <div class='px-4 mx-auto max-w-7xl sm:px-6 lg:px-8'>
-              <div class='fixed top-72 left-10 bg-white text-white p-4 rounded-lg shadow-lg hidden lg:block animate-fade-up'>
+              <div class='fixed top-72 left-10 bg-white text-white p-4 rounded-lg shadow-lg hidden lg:block animate-fade-up hover-lift z-50'>
                 <a
                   href='https://www.linkedin.com/in/kranthi-pusala'
                   target='_blank'
                   rel='noopener noreferrer'
+                  className='block animate-scale-in animate-delay-100'
                 >
                   <img
                     src={linkedinImage}
                     alt='LinkedIn'
-                    className='h-10 w-10 rounded mb-5 mt-5 cursor-pointer'
+                    className='h-10 w-10 rounded mb-5 mt-5 cursor-pointer transition-all duration-300 hover:scale-125 hover:rotate-12 hover-glow'
                   />
                 </a>
                 <a
                   href='https://github.com/Kranthi1122'
                   target='_blank'
                   rel='noopener noreferrer'
+                  className='block animate-scale-in animate-delay-200'
                 >
                   <img
                     src={githubImage}
-                    alt=''
-                    className='h-10 w-10 rounded mb-5'
+                    alt='GitHub'
+                    className='h-10 w-10 rounded mb-5 transition-all duration-300 hover:scale-125 hover:rotate-12 hover-glow'
                   />
                 </a>
                 <a
                   href='mailto:kranthinaidu80@gmail.com'
                   target='_blank'
                   rel='noopener noreferrer'
+                  className='block animate-scale-in animate-delay-300'
                 >
                   <img
                     src={gmailImage}
-                    alt=''
-                    className='h-10 w-10 rounded mb-5'
+                    alt='Gmail'
+                    className='h-10 w-10 rounded mb-5 transition-all duration-300 hover:scale-125 hover:rotate-12 hover-glow'
                   />
                 </a>
                 <a
                   href='https://wa.me/918639897116'
                   target='_blank'
                   rel='noopener noreferrer'
+                  className='block animate-scale-in animate-delay-500'
                 >
                   <img
                     src={whatsappImage}
                     alt='WhatsApp'
-                    class='h-10 w-10 rounded mb-5'
+                    className='h-10 w-10 rounded mb-5 transition-all duration-300 hover:scale-125 hover:rotate-12 hover-glow'
                   />
                 </a>
               </div>
@@ -236,12 +260,12 @@ function App() {
                 <div>
                   <h1 class='text-4xl font-bold text-black sm:text-6xl lg:text-7xl animate-fade-right'>
                     I'm{" "}
-                    <span className='bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent'>
+                    <span className='bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-pulse-glow'>
                       K
                     </span>
-                    ranthi MERN Stack
-                    <div class='relative inline-flex'>
-                      <span class='absolute inset-x-0 bottom-0 border-b-[30px] border-[#4ADE80]'></span>
+                    ranthi Full Stack
+                    <div class='relative inline-flex animate-bounce-in animate-delay-500'>
+                      <span class='absolute inset-x-0 bottom-0 border-b-[30px] border-[#4ADE80] animate-fade-up animate-delay-700'></span>
                       <h1 class='relative text-4xl font-bold text-black sm:text-6xl lg:text-7xl'>
                         Developer
                       </h1>
@@ -259,18 +283,23 @@ function App() {
                     expertise and contribute to impactful projects within a
                     dynamic organization
                   </p> */}
-                  <p class='mt-8 text-base text-black sm:text-xl animate-fade-right'>
-                    Passionate MERN Stack Developer with expertise in building
-                    dynamic, scalable web applications using MongoDB, Express,
-                    React, and Node.js. Committed to delivering clean, efficient
-                    code and seamless user experiences.
+                  <p class='mt-8 text-base text-black sm:text-xl animate-fade-right animate-delay-300'>
+                    Versatile Full Stack Developer with a strong foundation in
+                    building dynamic, scalable web applications. Proficient in
+                    React (Redux, Zustand), Angular, and Vue.js for robust
+                    frontend development, combined with backend expertise in
+                    Node.js, Express, Koa.js, and Python. Passionate about
+                    writing clean, efficient code and creating seamless,
+                    high-performance user experiences. Adept at collaborating
+                    across teams and adapting quickly to new technologies in
+                    fast-paced environments.
                   </p>
 
-                  <div class='mt-10 sm:flex sm:items-center sm:space-x-8'>
+                  <div class='mt-10 flex flex-col items-start space-y-4 sm:flex-row sm:items-center sm:space-y-0 sm:space-x-8 animate-fade-up animate-delay-500'>
                     <a
-                      href='#'
+                      href='#about'
                       title=''
-                      class='inline-flex items-center justify-center px-10 py-4 text-base font-semibold text-white transition-all duration-200 bg-orange-500 hover:bg-orange-600 focus:bg-orange-600 animate-fade-right'
+                      class='inline-flex items-center justify-center px-10 py-4 text-base font-semibold text-white transition-all duration-300 bg-orange-500 hover:bg-orange-600 focus:bg-orange-600 hover:scale-105 hover:shadow-lg transform hover:-translate-y-1 rounded-lg w-full sm:w-auto animate-bounce-in animate-delay-700'
                       role='button'
                     >
                       {" "}
@@ -279,7 +308,7 @@ function App() {
                     <a
                       href='#'
                       title=''
-                      class='inline-flex items-center mt-6 text-base font-semibold transition-all duration-200 sm:mt-0 hover:opacity-80 animate-fade-right'
+                      class='inline-flex items-center justify-center text-base font-semibold transition-all duration-300 hover:text-purple-600 hover:scale-105 transform hover:-translate-y-1 w-full sm:w-auto animate-bounce-in animate-delay-1000'
                       onClick={() => {
                         const link = document.createElement("a");
                         link.href = fileUrl;
@@ -295,7 +324,7 @@ function App() {
                         viewBox='0 0 24 24'
                         strokeWidth={1.5}
                         stroke='currentColor'
-                        className='size-10 mr-2 animate-bounce'
+                        className='size-10 mr-2 animate-bounce hover:animate-pulse'
                       >
                         <path
                           strokeLinecap='round'
@@ -308,32 +337,37 @@ function App() {
                   </div>
                 </div>
 
-                <div>
+                <div className='animate-fade-left animate-delay-300'>
                   <img
-                    class='w-full rounded-3xl animate-fade-down z-0'
+                    class='w-full rounded-3xl animate-scale-in animate-delay-500 scale-105 shadow-2xl transition-all duration-500 hover-glow'
                     src={image}
-                    alt=''
+                    alt='Kranthi Kumar Profile'
                   />
                 </div>
               </div>
             </div>
           </section>
         </div>
-        <section class='py-10 bg-gray-100 sm:py-16 lg:py-24' id='about'>
+        <section
+          class='py-10 bg-gray-100 sm:py-16 lg:py-24 relative z-10'
+          id='about'
+        >
           <div class='max-w-5xl px-4 mx-auto sm:px-6 lg:px-8'>
             <div class='max-w-2xl mx-auto text-center animate-fade-right'>
               <h2 class='text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl'>
                 Numbers Speak My Experience
               </h2>
               <p class='mt-3 text-xl leading-relaxed text-gray-600 md:mt-8'>
-                With over 1.7 years of experience as a skilled MERN Stack
-                Developer, I have honed my expertise in crafting dynamic,
-                high-performing web applications. I have successfully delivered
-                2+ projects, demonstrating a strong commitment to clean code,
-                scalable architecture, and user-centric design. My passion for
-                innovation drives me to continuously learn and implement the
-                latest technologies, ensuring impactful solutions tailored to
-                client needs."
+                With over 2.5 years of experience as a skilled Full Stack
+                Developer, I have honed my expertise in building dynamic,
+                high-performing web applications using technologies like React
+                (Redux, Zustand), Angular, Vue.js, Node.js, Express, Koa.js, and
+                Python. I have successfully delivered 3+ end-to-end projects,
+                showcasing a strong commitment to clean code, scalable
+                architecture, and user-centric design. My passion for innovation
+                and continuous learning drives me to stay up-to-date with the
+                latest technologies, ensuring impactful and efficient solutions
+                tailored to client needs.
               </p>
             </div>
 
@@ -344,7 +378,7 @@ function App() {
                     {" "}
                     <CountUp
                       start={0}
-                      end={1.7}
+                      end={2.5}
                       decimals={1}
                       duration={7}
                       suffix='+'
@@ -363,7 +397,7 @@ function App() {
                 <h3 class='font-bold text-7xl'>
                   <span class='text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-600 to-blue-600'>
                     {" "}
-                    <CountUp start={0} end={2} duration={7} suffix='+' />{" "}
+                    <CountUp start={0} end={3} duration={7} suffix='+' />{" "}
                   </span>
                 </h3>
                 <p class='mt-4 text-xl font-medium text-gray-900'>
@@ -393,13 +427,13 @@ function App() {
             </div>
 
             <div class='grid grid-cols-1 gap-6 mt-12 lg:mt-16 xl:gap-10 sm:grid-cols-2 lg:grid-cols-3 justify-items-center'>
-              <div class='overflow-hidden rounded shadow transform transition duration-300  flex justify-center items-center h-50 w-60 bg-white animate-fade-left animate-delay-75 hover:scale-105'>
+              <div class='overflow-hidden rounded-lg shadow-lg transform transition duration-300 flex justify-center items-center h-50 w-60 bg-white animate-bounce-in animate-delay-100 hover:scale-110 hover:shadow-xl hover-lift hover-glow'>
                 <div class='p-8'>
                   <div class='flex items-center'>
                     <img
-                      class='flex-shrink-0 w-12 h-auto'
+                      class='flex-shrink-0 w-12 h-auto transition-transform duration-300 hover:rotate-12'
                       src={HTMLIMage}
-                      alt=''
+                      alt='HTML'
                     />
                     <div class='ml-5 mr-auto'>
                       <p class='text-xl font-semibold text-black'>HTML</p>
@@ -408,13 +442,13 @@ function App() {
                 </div>
               </div>
 
-              <div class='overflow-hidden rounded shadow transform transition duration-300  flex justify-center items-center h-50 w-60 bg-white animate-fade-left animate-delay-75 hover:scale-105'>
+              <div class='overflow-hidden rounded-lg shadow-lg transform transition duration-300 flex justify-center items-center h-50 w-60 bg-white animate-bounce-in animate-delay-200 hover:scale-110 hover:shadow-xl hover-lift hover-glow'>
                 <div class='p-8'>
                   <div class='flex items-center'>
                     <img
-                      class='flex-shrink-0 w-12 h-auto'
+                      class='flex-shrink-0 w-12 h-auto transition-transform duration-300 hover:rotate-12'
                       src={cssImage}
-                      alt=''
+                      alt='CSS'
                     />
                     <div class='ml-5 mr-auto'>
                       <p class='text-xl font-semibold text-black'>CSS</p>
@@ -423,42 +457,28 @@ function App() {
                 </div>
               </div>
 
-              <div class='overflow-hidden rounded shadow transform transition duration-300  flex justify-center items-center h-50 w-60 bg-white animate-fade-left animate-delay-75 hover:scale-105'>
+              <div class='overflow-hidden rounded-lg shadow-lg transform transition duration-300 flex justify-center items-center h-50 w-60 bg-white animate-bounce-in animate-delay-300 hover:scale-110 hover:shadow-xl hover-lift hover-glow'>
                 <div class='p-8'>
                   <div class='flex items-center'>
                     <img
-                      class='flex-shrink-0 w-12 h-auto'
+                      class='flex-shrink-0 w-12 h-auto transition-transform duration-300 hover:rotate-12'
                       src={javascriptImage}
-                      alt=''
+                      alt='JavaScript'
                     />
                     <div class='ml-5 mr-auto'>
                       <p class='text-xl font-semibold text-black'>JavaScript</p>
                     </div>
-                    <svg
-                      class='block w-6 h-6 text-blue-600'
-                      xmlns='http://www.w3.org/2000/svg'
-                      fill='none'
-                      viewBox='0 0 24 24'
-                      stroke='currentColor'
-                    >
-                      <path
-                        stroke-linecap='round'
-                        stroke-linejoin='round'
-                        stroke-width='2'
-                        d='M14 5l7 7m0 0l-7 7m7-7H3'
-                      />
-                    </svg>
                   </div>
                 </div>
               </div>
 
-              <div class='overflow-hidden rounded shadow transform transition duration-300  flex justify-center items-center h-50 w-60 bg-white animate-fade-left animate-delay-75 hover:scale-105'>
+              <div class='overflow-hidden rounded-lg shadow-lg transform transition duration-300 flex justify-center items-center h-50 w-60 bg-white animate-bounce-in animate-delay-500 hover:scale-110 hover:shadow-xl hover-lift hover-glow'>
                 <div class='p-8'>
                   <div class='flex items-center'>
                     <img
-                      class='flex-shrink-0 w-12 h-auto'
+                      class='flex-shrink-0 w-12 h-auto transition-transform duration-300 hover:rotate-12'
                       src={reactImage}
-                      alt=''
+                      alt='React'
                     />
                     <div class='ml-5 mr-auto'>
                       <p class='text-xl font-semibold text-black'>React</p>
@@ -467,118 +487,62 @@ function App() {
                 </div>
               </div>
 
-              <div class='overflow-hidden rounded shadow transform transition duration-300  flex justify-center items-center h-50 w-60 bg-white animate-fade-left animate-delay-75 hover:scale-105'>
+              <div class='overflow-hidden rounded-lg shadow-lg transform transition duration-300 flex justify-center items-center h-50 w-60 bg-white animate-bounce-in animate-delay-700 hover:scale-110 hover:shadow-xl hover-lift hover-glow'>
                 <div class='p-8'>
                   <div class='flex items-center'>
                     <img
-                      class='flex-shrink-0 w-12 h-auto'
+                      class='flex-shrink-0 w-12 h-auto transition-transform duration-300 hover:rotate-12'
                       src={vueImage}
-                      alt=''
+                      alt='Vue'
                     />
                     <div class='ml-5 mr-auto'>
                       <p class='text-xl font-semibold text-black'>Vue</p>
                     </div>
-                    <svg
-                      class='hidden w-5 h-5 text-blue-600'
-                      xmlns='http://www.w3.org/2000/svg'
-                      fill='none'
-                      viewBox='0 0 24 24'
-                      stroke='currentColor'
-                    >
-                      <path
-                        stroke-linecap='round'
-                        stroke-linejoin='round'
-                        stroke-width='2'
-                        d='M14 5l7 7m0 0l-7 7m7-7H3'
-                      />
-                    </svg>
                   </div>
                 </div>
               </div>
 
-              <div class='overflow-hidden rounded shadow transform transition duration-300  flex justify-center items-center h-50 w-60 bg-white animate-fade-left animate-delay-75 hover:scale-105'>
+              <div class='overflow-hidden rounded-lg shadow-lg transform transition duration-300 flex justify-center items-center h-50 w-60 bg-white animate-bounce-in animate-delay-1000 hover:scale-110 hover:shadow-xl hover-lift hover-glow'>
                 <div class='p-8'>
                   <div class='flex items-center'>
                     <img
-                      class='flex-shrink-0 w-12 h-auto'
+                      class='flex-shrink-0 w-12 h-auto transition-transform duration-300 hover:rotate-12'
                       src={nodeImage}
-                      alt=''
+                      alt='Node.js'
                     />
                     <div class='ml-5 mr-auto'>
                       <p class='text-xl font-semibold text-black'>Node Js</p>
                     </div>
-                    <svg
-                      class='hidden w-5 h-5 text-blue-600'
-                      xmlns='http://www.w3.org/2000/svg'
-                      fill='none'
-                      viewBox='0 0 24 24'
-                      stroke='currentColor'
-                    >
-                      <path
-                        stroke-linecap='round'
-                        stroke-linejoin='round'
-                        stroke-width='2'
-                        d='M14 5l7 7m0 0l-7 7m7-7H3'
-                      />
-                    </svg>
                   </div>
                 </div>
               </div>
 
-              <div class='overflow-hidden rounded shadow transform transition duration-300  flex justify-center items-center h-50 w-60 bg-white animate-fade-left animate-delay-75 hover:scale-105'>
+              <div class='overflow-hidden rounded-lg shadow-lg transform transition duration-300 flex justify-center items-center h-50 w-60 bg-white animate-scale-in animate-delay-100 hover:scale-110 hover:shadow-xl hover-lift hover-glow'>
                 <div class='p-8'>
                   <div class='flex items-center'>
                     <img
-                      class='flex-shrink-0 w-12 h-auto'
+                      class='flex-shrink-0 w-12 h-auto transition-transform duration-300 hover:rotate-12'
                       src={expressImage}
-                      alt=''
+                      alt='Express.js'
                     />
                     <div class='ml-5 mr-auto'>
                       <p class='text-xl font-semibold text-black'>Express Js</p>
                     </div>
-                    <svg
-                      class='hidden w-5 h-5 text-blue-600'
-                      xmlns='http://www.w3.org/2000/svg'
-                      fill='none'
-                      viewBox='0 0 24 24'
-                      stroke='currentColor'
-                    >
-                      <path
-                        stroke-linecap='round'
-                        stroke-linejoin='round'
-                        stroke-width='2'
-                        d='M14 5l7 7m0 0l-7 7m7-7H3'
-                      />
-                    </svg>
                   </div>
                 </div>
               </div>
 
-              <div class='overflow-hidden rounded shadow transform transition duration-300  flex justify-center items-center h-50 w-60 bg-white animate-fade-left animate-delay-75 hover:scale-105'>
+              <div class='overflow-hidden rounded-lg shadow-lg transform transition duration-300 flex justify-center items-center h-50 w-60 bg-white animate-scale-in animate-delay-200 hover:scale-110 hover:shadow-xl hover-lift hover-glow'>
                 <div class='p-8'>
                   <div class='flex items-center'>
                     <img
-                      class='flex-shrink-0 w-12 h-auto'
+                      class='flex-shrink-0 w-12 h-auto transition-transform duration-300 hover:rotate-12'
                       src={mongodbIMAGE}
-                      alt=''
+                      alt='MongoDB'
                     />
                     <div class='ml-5 mr-auto'>
                       <p class='text-xl font-semibold text-black'>MongoDB</p>
                     </div>
-                    <svg
-                      class='hidden w-5 h-5 text-blue-600'
-                      xmlns='http://www.w3.org/2000/svg'
-                      fill='none'
-                      viewBox='0 0 24 24'
-                      stroke='currentColor'
-                    >
-                      <path
-                        stroke-linecap='round'
-                        stroke-linejoin='round'
-                        stroke-width='2'
-                        d='M14 5l7 7m0 0l-7 7m7-7H3'
-                      />
-                    </svg>
                   </div>
                 </div>
               </div>
@@ -586,15 +550,26 @@ function App() {
           </div>
         </section>
         <section class='py-10 bg-gray-50 sm:py-16 lg:py-24' id='projects'>
+          <div class='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+            <div class='max-w-2xl mx-auto text-center animate-fade-down animate-delay-100'>
+              <h2 class='text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl'>
+                Featured Projects
+              </h2>
+              <p class='max-w-xl mx-auto mt-4 text-base leading-relaxed text-gray-600'>
+                Showcasing my expertise through real-world applications and
+                innovative solutions
+              </p>
+            </div>
+          </div>
           <div class='flex flex-col lg:flex-row gap-6 mt-12 px-4'>
-            <div class='flex flex-col bg-white shadow-md rounded-lg p-6 hover:shadow-xl transition-shadow duration-300 w-full lg:w-1/2 animate-fade-right'>
-              <div class='flex items-center'>
+            <div class='flex flex-col bg-white shadow-lg rounded-xl p-6 hover:shadow-2xl transition-all duration-500 w-full lg:w-1/2 animate-fade-right animate-delay-300 hover-lift hover-glow'>
+              <div class='flex items-center animate-scale-in animate-delay-500'>
                 <img
                   src={pharmaImage}
                   alt='Project 1'
-                  class='w-16 h-16 rounded-full'
+                  class='w-16 h-16 rounded-full transition-transform duration-300 hover:scale-110 hover:rotate-6'
                 />
-                <h3 class='text-2xl font-bold text-gray-800 ml-4'>
+                <h3 class='text-2xl font-bold text-gray-800 ml-4 animate-fade-right animate-delay-700'>
                   Project 1: Digital Air Series
                 </h3>
               </div>
@@ -626,14 +601,14 @@ function App() {
               </div>
             </div>
 
-            <div class='flex flex-col bg-white shadow-md rounded-lg p-6 hover:shadow-xl transition-shadow duration-300 w-full lg:w-1/2 animate-fade-left'>
-              <div class='flex items-center'>
+            <div class='flex flex-col bg-white shadow-lg rounded-xl p-6 hover:shadow-2xl transition-all duration-500 w-full lg:w-1/2 animate-fade-left animate-delay-500 hover-lift hover-glow'>
+              <div class='flex items-center animate-scale-in animate-delay-700'>
                 <img
                   src={thunderImage}
                   alt='Project 2'
-                  class='w-16 h-16 rounded-full'
+                  class='w-16 h-16 rounded-full transition-transform duration-300 hover:scale-110 hover:rotate-6'
                 />
-                <h3 class='text-2xl font-bold text-gray-800 ml-4'>
+                <h3 class='text-2xl font-bold text-gray-800 ml-4 animate-fade-left animate-delay-1000'>
                   Project 2: Request Thunder
                 </h3>
               </div>
@@ -1031,7 +1006,7 @@ function App() {
           <div class='px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl'>
             <div class='text-center sm:flex sm:items-center sm:justify-center sm:text-left'>
               <h2 class='text-xl font-bold text-white'>
-                © 2024 Kranthi Kumar Pusala. All rights reserved.
+                © 2025 Kranthi Kumar Pusala. All rights reserved.
               </h2>
             </div>
           </div>
